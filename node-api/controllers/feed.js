@@ -1,5 +1,11 @@
 exports.getPosts = (req, res, next) => {
-    res.status(200).json({ title: "hamburguer", content: "thats a good hamburguer" })
+    res.status(200).json(
+        {
+            id: new Date().toISOString(),
+            title: "hamburguer",
+            content: "thats a good hamburguer"
+        }
+    )
 }
 
 exports.createPost = (req, res, next) => {
