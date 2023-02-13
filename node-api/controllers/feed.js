@@ -3,11 +3,27 @@ const { validationResult } = require('express-validator')
 const Post = require('../models/post')
 
 exports.getPosts = (req, res, next) => {
+
     Post.find({}).then(result => {
         res.status(200).json({
             posts: result
         });
     })
+
+    // Post.findById('63e82d35d97ff8f0b955221a')
+    //     .then(result => {
+    //         res.status(200).json({
+    //             post: result
+    //         })
+    //     })
+
+    // Post.findOne({ 'title': 'herbert' })
+    //     .then(result => {
+    //         res.status(200).json({
+    //             post: result
+    //         })
+    //     })
+
     // res.status(200).json(
     //     {
     //         posts: [
